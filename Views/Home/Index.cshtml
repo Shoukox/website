@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using WebApplication2.Data.ViewModels;
+@model ViewModel
+<div id="main">
+    <br /><br />
+          <div >
+              <form class="form-inline" method="post">
+                  <label>Тип шизы: </label>
+                  <select name="catId" class="form-control">
+                      <option value="0">Все</option>
+                      @{
+                          foreach (var item in Model.debilsCategories)
+                          {
+                              <option value="@item.id">@item.ezName</option>
+                          }
+                      }
+                  </select>
+                  <input type="submit" />
+              </form>
+              <span style="border: 3px, ridge">
+                  @{ if (Model.curCategory != null)
+                      {<b>Текущая категория: @Model.curCategory.ezName</b>} }
+              </span>
+          </div>
+    <table class="table">
+        <tr>
+            <td>#</td>
+            <td>Имя</td>
+            <td>Описание</td>
+        </tr>
+        @{
+            int i = 0;
+            foreach (var item in Model.debils)
+            {
+                <img src="@item.img" width="120" height="120" alt="@item.name" class="rounded-circle" />
+                i++;
+                <tr>
+                    <td>@i</td>
+                    <td>@item.name</td>
+                    <td>@item.desc</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
