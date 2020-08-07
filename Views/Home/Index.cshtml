@@ -3,45 +3,51 @@
 }
 @using WebApplication2.Data.ViewModels;
 @model ViewModel
-<div id="main">
-    <br /><br />
-          <div >
-              <form class="form-inline" method="post">
-                  <label>Тип шизы: </label>
-                  <select name="catId" class="form-control">
-                      <option value="0">Все</option>
-                      @{
-                          foreach (var item in Model.debilsCategories)
-                          {
-                              <option value="@item.id">@item.ezName</option>
-                          }
-                      }
-                  </select>
-                  <input type="submit" />
-              </form>
-              <span style="border: 3px, ridge">
-                  @{ if (Model.curCategory != null)
-                      {<b>Текущая категория: @Model.curCategory.ezName</b>} }
-              </span>
-          </div>
-    <table class="table">
-        <tr>
-            <td>#</td>
-            <td>Имя</td>
-            <td>Описание</td>
-        </tr>
+    <div id="main">
+        <div>
+            <form class="form-inline" method="post">
+                <label>Тип шизы: </label>
+                <select name="catId" class="form-control">
+                    <option value="0">Все</option>
+                    @{
+                        foreach (var item in Model.debilsCategories)
+                        {
+                            <option value="@item.id">@item.ezName</option>
+                        }
+                    }
+                </select>
+                <input type="submit" />
+            </form>
+            <span style="border: 3px, ridge">
+                @{ if (Model.curCategory != null)
+                    {<b>Текущая категория: @Model.curCategory.ezName</b>} }
+            </span>
+        </div>
+        <hr align="center" width=100% size="3" color="#ff0000" />
         @{
-            int i = 0;
             foreach (var item in Model.debils)
             {
                 <img src="@item.img" width="120" height="120" alt="@item.name" class="rounded-circle" />
-                i++;
-                <tr>
-                    <td>@i</td>
-                    <td>@item.name</td>
-                    <td>@item.desc</td>
-                </tr>
             }
         }
-    </table>
-</div>
+        <hr align="center" width=100% size="3" color="#ff0000" />
+        <table class="table">
+            <tr>
+                <td><b>#</b></td>
+                <td><b>Имя</b></td>
+                <td><b>Описание</b></td>
+            </tr>
+            @{
+                int i = 0;
+                foreach (var item in Model.debils)
+                {
+                    i++;
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.name</td>
+                        <td>@item.desc</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>

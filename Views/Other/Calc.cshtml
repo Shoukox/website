@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using WebApplication2.Data.ViewModels;
+@model ViewModel
+   <div class="main">
+       <form class="form-control mt-md-auto">
+           <input placeholder="Первое число..." name="first" maxlength="10" />
+           <select name="chr">
+               <option value="Сложение">Сложение</option>
+               <option value="Вычитание">Вычитание</option>
+               <option value="Деление">Деление</option>
+               <option value="Умножение">Умножение</option>
+               <option value="Степень">Степень</option>
+               <option value="Корень">Корень</option>
+           </select>
+           <input placeholder="Второе число..." name="second" maxlength="10" />
+           <button type="submit">Вычислить</button>
+       </form>
+       <span class="text">
+           <h4>Этот недокалькулятор способен выполнять арифметические операции только на 2 числами</h4>
+       </span>
+       <b>Ответ: @ViewBag.Answer</b>
+   </div>
