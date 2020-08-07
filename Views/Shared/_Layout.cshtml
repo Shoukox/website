@@ -6,6 +6,8 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/StyleSheet.css">
+    <script type="text/javascript" src="~/js/cssrefresh.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
                         <a class="nav-link" href="~/">Домой <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">О создателе</a>
+                        <a class="nav-link" href="/Home/About">О создателе</a>
                     </li>
                 </ul>
                 <div class="dropdown">
@@ -42,10 +44,9 @@
         @RenderBody()
     </div>
     <footer>
-        <span class="text-center" style="color: #808080">
+        <span class="text-center">
             <p><b><i>2020 Shoukko's Website</i></b></p>
         </span>
     </footer>
-    <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>

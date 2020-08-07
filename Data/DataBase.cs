@@ -13,7 +13,7 @@ namespace WebApplication2.Data
         {
 
         }
-        public DbSet<debils> debils { get; set; }
-        public DbSet<debilscats> debilscat { get; set; }
+        public DbSet<person> debils { get; set; }
+        public DbSet<personcats> debilscat { get; set; }
     }
 }

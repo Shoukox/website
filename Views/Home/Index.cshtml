@@ -5,14 +5,14 @@
 @model ViewModel
     <div id="main">
         <div>
-            <form class="form-inline" method="post">
-                <label>Тип шизы: </label>
-                <select name="catId" class="form-control">
-                    <option value="0">Все</option>
+            <form class="form-inline" method="get">
+                <label>Игра: </label>
+                <select name="catString" class="form-control">
+                    <option>Все</option>
                     @{
-                        foreach (var item in Model.debilsCategories)
+                        foreach (var item in Model.personCats)
                         {
-                            <option value="@item.id">@item.ezName</option>
+                            <option value="@item.ezName">@item.ezName</option>
                         }
                     }
                 </select>
@@ -25,7 +25,7 @@
         </div>
         <hr align="center" width=100% size="3" color="#ff0000" />
         @{
-            foreach (var item in Model.debils)
+            foreach (var item in Model.persons)
             {
                 <img src="@item.img" width="120" height="120" alt="@item.name" class="rounded-circle" />
             }
@@ -39,13 +39,14 @@
             </tr>
             @{
                 int i = 0;
-                foreach (var item in Model.debils)
+                foreach (var item in Model.persons)
                 {
                     i++;
                     <tr>
                         <td>@i</td>
                         <td>@item.name</td>
                         <td>@item.desc</td>
+                        <td>@item.cats.catString</td>
                     </tr>
                 }
             }

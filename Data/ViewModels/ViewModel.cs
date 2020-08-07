@@ -7,9 +7,9 @@ namespace WebApplication2.Data.ViewModels
 {
     public class ViewModel
     {
-        public IEnumerable<debils> debils { get; set; }
-        public IEnumerable<debilscats> debilsCategories { get; set; }
-        public debilscats curCategory { get; set; }
+        public IEnumerable<person> persons { get; set; }
+        public IEnumerable<personcats> personCats { get; set; }
+        public personcats curCategory { get; set; }
 
     }
 }

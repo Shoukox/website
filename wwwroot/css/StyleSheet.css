@@ -1,5 +1,8 @@
 ﻿
 /* Dropdown Button */
+body {
+    background-color: #ffdfdf;
+}
 .dropbtn {
     background-color: #4CAF50;
     color: white;
